@@ -1,67 +1,81 @@
 import React, { Component } from 'react';
+import { Form, Button, Label, Segment } from 'semantic-ui-react';
+
 
 class CreateDiary extends Component {
-    state = {
-        title: '',
-        author: '',
-        date: '',
-        image: '',
-        text: ''
+  constructor() {
+    super();
+    this.state = {
+      title: '',
+      author: '',
+      date: '',
+      image: '',
+      text: ''
     }
-
-  handleChange = (e) => {
-    this.setState({
-      // title: e.target.value,
-      // author: e.target.value,
-      // date: e.target.value,
-      // image: e.target.value,
-      // text: e.target.value
-      [e.currentTarget.id]: e.currentTarget.value
-    })
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.addDiary(this.state)
-      this.setState({
-        title: '',
-        author: '',
-        date: '',
-        image: '',
-        text: ''
-      })
-  }
+handleChange = (e) => {
+  this.setState({[e.currentTarget.name]: e.currentTarget.value})
+}
 
-  render(){
-    return(
-      <div>
+render(){
+  return(
+      <Segment>
       <h1>Everyday Diary</h1>
 
-      <form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.props.addDiary.bind(null, this.state)}>
 
-          <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Title'/>
-
-        <br/>
-
-          <input type='text' id='author' value={this.state.author} onChange={this.handleChange} placeholder='Author'/>
-
-        <br/>
-
-          <input type='text' id='date' value={this.state.date} onChange={this.handleChange} placeholder='Todays date:'/>
+          <Form.Input
+            type='text'
+            name='title'
+            value={this.state.title}
+            onChange={this.handleChange}
+            placeholder='Title'
+            />
 
         <br/>
 
-          <input type='text' id='image' value={this.state.image} onChange={this.handleChange} placeholder='Image:'/>
+          <Form.Input
+            type='text'
+            name='author'
+            value={this.state.author}
+            onChange={this.handleChange}
+            placeholder='Author'
+            />
 
         <br/>
 
-          <input type='text' id='text' value={this.state.text} onChange={this.handleChange} placeholder='Write some thoughts:'/>
+          <Form.Input
+            type='text'
+            name='date'
+            value={this.state.date}
+            onChange={this.handleChange}
+            placeholder='Todays date:'
+            />
 
         <br/>
 
-          <button>Create Post</button>
-      </form>
-    </div>
+          <Form.Input
+            type='text'
+            name='image'
+            value={this.state.image}
+            onChange={this.handleChange}
+            placeholder='Image:'/>
+
+        <br/>
+
+          <Form.TextArea
+            type='text'
+            name='text'
+            value={this.state.text}
+            onChange={this.handleChange}
+            placeholder='Write your thoughts...'/>
+
+        <br/>
+
+          <Button type='Submit' color='black'>Create Post</Button>
+      </Form>
+    </Segment>
     )
   }
 }

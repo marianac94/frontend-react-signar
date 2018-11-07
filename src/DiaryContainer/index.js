@@ -1,72 +1,61 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Header } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
+import styles from './style.css'
+
 import CreateDiary from '../CreateDiary';
 import DiaryList from '../DiaryList';
 
+
 class DiaryContainer extends Component {
-  state = {
-    diary: [
-      {title: '', author: '', date: '', image: '', text: ''}
-    ]
+  constructor() {
+    super();
+    this.state = {
+      diary: []
+    }
   }
 
-  getDiaries = async () => {
+  getDiary = async () => {
     const diary = await fetch('http://localhost:9000/api/v1/diary');
       const diaryParsedJSON = await diary.json();
       return diaryParsedJSON
   }
 
-  componentDidMount(){
-    this.getDiaries().then((diary) => {
+  componentDidMount() {
+    this.getDiary().then((diary) => {
       this.setState({diary: diary.data})
-
     }).catch((err) => {
       console.log(err);
     })
   }
 
   addDiary = async (oneDiary, e) => {
-    // e.preventDefault();
+    e.preventDefault();
+      console.log(oneDiary, ' all data is here');
+
     try {
       const createdDiary = await fetch('http://localhost:9000/api/v1/diary', {
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify(oneDiary),
         headers: {
-          'Content-Type': 'aaplication/json'
+          'Content-Type': 'application/json'
         }
       });
 
-      // const parsedResponse = await createdDiary.json();
-        const newDiary = [...this.state.diary, oneDiary]
-        this.setState({
-          diary: newDiary
-        })
-
-    } catch(err){
-      console.log(err);
+      } catch(err){
+        console.log(err);
+      }
     }
-  }
-
-  deleteDiary = async (id) => {
-    const deleteDiaryResponse = await fetch('http://localhost:9000/api/v1/diary/' + id,
-    {method: 'DELETE'});
-    // const deleteDiaryParsed = await deleteDiaryResponse.json();
-      const deleteFilterDiary = this.state.diary.filter(diary => {
-        return diary.id !== id
-      })
-
-    this.setState({
-      diary: deleteFilterDiary
-      // this.state.diary.filter((diary) => diary._id !== id )
-    })
-  }
 
   render(){
-    console.log(this.state.diary, ' this is it');
+    console.log(this.state, ' this is it')
     return(
       <div>
-        <CreateDiary addDiary={this.addDiary} />
-        <DiaryList diary={this.state.diary} deleteDiary={this.deleteDiary} />
+        <h1> Signar Logo </h1>
+          <CreateDiary addDiary={this.addDiary} />
+          <DiaryList oneDiary={this.state.diary} />
       </div>
     )
   }
@@ -74,3 +63,5 @@ class DiaryContainer extends Component {
 
 
 export default DiaryContainer;
+// <ListContainer diaryList={this.state.diaryList} />
+// <ul>{this.state.diary.map(item => <li>key={item._id}>{item.title}</li>)}</ul>
