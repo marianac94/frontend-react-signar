@@ -73,7 +73,7 @@ render(){
 
         <br/>
 
-          <Button type='Submit' color='black'>Create Post</Button>
+          <Button type='Submit' color='black'>Post</Button>
       </Form>
     </Segment>
     )

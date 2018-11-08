@@ -49,13 +49,20 @@ class DiaryContainer extends Component {
       }
     }
 
+    deleteDiary = async (id) => {
+      const deleteDiaryResponse = await fetch('http://localhost:9000/api/v1/diary/' + id, {method: 'DELETE'});
+
+      const deleteDiaryParsed = await deleteDiaryResponse.json();
+        this.setState({diary: this.state.diary.filter((oneDiary) => oneDiary._id !== id )})
+          console.log(deleteDiaryParsed, ' response from express server')
+  }
+
   render(){
-    console.log(this.state, ' this is it')
     return(
       <div>
         <h1> Signar Logo </h1>
           <CreateDiary addDiary={this.addDiary} />
-          <DiaryList oneDiary={this.state.diary} />
+          <DiaryList oneDiary={this.state.diary} deleteDiary={this.deleteDiary} />
       </div>
     )
   }
@@ -63,5 +70,3 @@ class DiaryContainer extends Component {
 
 
 export default DiaryContainer;
-// <ListContainer diaryList={this.state.diaryList} />
-// <ul>{this.state.diary.map(item => <li>key={item._id}>{item.title}</li>)}</ul>

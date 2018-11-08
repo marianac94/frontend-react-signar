@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css';
+import { Form, Button, Label, Segment } from 'semantic-ui-react';
 
 
 const DiaryList = (props) => {
@@ -10,12 +11,15 @@ const DiaryList = (props) => {
     return (
       <li key={oneDiary._id}>
 
-         {oneDiary.title}
-         {oneDiary.author}
-         {oneDiary.date}
+         {oneDiary.title} <br/>
+         {oneDiary.author} <br/>
+         {oneDiary.date} <br/>
          <img src={oneDiary.image}/>
-         {oneDiary.text}
+         {oneDiary.text} <br/><br/>
 
+       <Button color='black' onClick={props.deleteDiary.bind(null, oneDiary._id)}>Delete Post</Button>
+
+         <br/><br/>
       </li>
     )
 })
