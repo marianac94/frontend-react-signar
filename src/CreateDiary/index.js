@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Button, Label, Segment } from 'semantic-ui-react';
+import { Form, Button, Label, Segment, Checkbox, Input, Radio, Select, TextArea } from 'semantic-ui-react';
+import '../App.css';
 
 
 class CreateDiary extends Component {
@@ -20,60 +21,74 @@ handleChange = (e) => {
 
 render(){
   return(
-      <Segment>
-      <h1>Everyday Diary</h1>
+    <Segment className='everythingForm'>
+      <h1 className='titleForm'>Tell your story</h1>
 
-      <Form onSubmit={this.props.addDiary.bind(null, this.state)}>
+      <Form onSubmit={this.props.addDiary.bind(null, this.state)} className='allForm'>
 
-          <Form.Input
+        <div className='formField'>
+
+          <Form.Field
+            control={Input}
             type='text'
             name='title'
             value={this.state.title}
             onChange={this.handleChange}
             placeholder='Title'
+            style={{ width: "500px" }}
             />
 
-        <br/>
 
-          <Form.Input
+          <Form.Group widths='equal'>
+          <Form.Field
+            control={Input}
             type='text'
             name='author'
             value={this.state.author}
             onChange={this.handleChange}
             placeholder='Author'
+            style={{ width: "240px" }}
             />
 
-        <br/>
-
-          <Form.Input
+          <Form.Field
+            control={Input}
             type='text'
             name='date'
             value={this.state.date}
             onChange={this.handleChange}
             placeholder='Todays date:'
+            style={{ width: "240px" }}
             />
+        </Form.Group>
 
-        <br/>
-
-          <Form.Input
+          <Form.Field
+            control={Input}
             type='text'
             name='image'
             value={this.state.image}
             onChange={this.handleChange}
-            placeholder='Image:'/>
+            placeholder='Image:'
+            style={{ width: "500px" }}
+            />
 
-        <br/>
 
-          <Form.TextArea
+          <Form.Field
+            control={TextArea}
             type='text'
             name='text'
             value={this.state.text}
             onChange={this.handleChange}
-            placeholder='Write your thoughts...'/>
+            placeholder='Write your thoughts...'
+            style={{ width: "500px" }}
+            />
 
-        <br/>
-
-          <Button type='Submit' color='black'>Post</Button>
+          <Form.Field
+            control={Button}
+            type='Submit'
+            color='black'
+            style={{ width: "500px" }}
+            >Post</Form.Field>
+          </div>
       </Form>
     </Segment>
     )

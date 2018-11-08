@@ -60,3 +60,45 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.titleList {
+  font-size: 65px;
+  font-family: 'Vidaloka', serif;
+  width: 100%;
+  padding-top: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.subTitleList {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.titleForm {
+  font-size: 30px;
+  font-family: 'Montserrat', serif;
+  color: black;
+  width: 100%;
+  padding-top: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.allForm {
+  width: 505px;
+}
+
+.everythingForm {
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+
+}

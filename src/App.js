@@ -12,7 +12,6 @@ import DiaryContainer from './DiaryContainer';
 const App = () => {
   return (
     <div>
-
       <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Vidaloka');
       </style>
