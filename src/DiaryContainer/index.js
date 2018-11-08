@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Header } from 'semantic-ui-react'
+import { Header, Divider, Image } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import styles from './style.css'
 
@@ -11,6 +11,7 @@ import DiaryList from '../DiaryList';
 class DiaryContainer extends Component {
   constructor() {
     super();
+
     this.state = {
       diary: []
     }
@@ -49,20 +50,22 @@ class DiaryContainer extends Component {
       }
     }
 
-    deleteDiary = async (id) => {
-      const deleteDiaryResponse = await fetch('http://localhost:9000/api/v1/diary/' + id, {method: 'DELETE'});
+  deleteDiary = async (id) => {
+    const deleteDiaryResponse = await fetch('http://localhost:9000/api/v1/diary/' + id, {method: 'DELETE'});
 
-      const deleteDiaryParsed = await deleteDiaryResponse.json();
-        this.setState({diary: this.state.diary.filter((oneDiary) => oneDiary._id !== id )})
-          console.log(deleteDiaryParsed, ' response from express server')
+    const deleteDiaryParsed = await deleteDiaryResponse.json();
+      this.setState({
+        diary: this.state.diary.filter((oneDiary) => oneDiary._id !== id )
+      })
+
+    console.log(deleteDiaryParsed, ' deleted post')
   }
 
   render(){
     return(
       <div>
-        <h1> Signar Logo </h1>
-          <CreateDiary addDiary={this.addDiary} />
-          <DiaryList oneDiary={this.state.diary} deleteDiary={this.deleteDiary} />
+        <CreateDiary addDiary={this.addDiary} />
+        <DiaryList oneDiary={this.state.diary} deleteDiary={this.deleteDiary} />
       </div>
     )
   }

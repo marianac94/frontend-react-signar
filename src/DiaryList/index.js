@@ -1,34 +1,43 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Form, Button, Label, Segment } from 'semantic-ui-react';
+import { Card, Button, Image, Icon, Content } from 'semantic-ui-react';
 
 
 const DiaryList = (props) => {
-  console.log(props, " this is props");
+  console.log(props, ' this is props');
   const diaryList = props.oneDiary.map((oneDiary) => {
 
 
     return (
-      <li key={oneDiary._id}>
+        <Card key={oneDiary._id}>
+           <Image src={oneDiary.image} />
 
-         {oneDiary.title} <br/>
-         {oneDiary.author} <br/>
-         {oneDiary.date} <br/>
-         <img src={oneDiary.image}/>
-         {oneDiary.text} <br/><br/>
+        <Card.Content>
+          <Card.Header>{oneDiary.title}</Card.Header>
 
-       <Button color='black' onClick={props.deleteDiary.bind(null, oneDiary._id)}>Delete Post</Button>
+        <Card.Meta>
+          <span className='dateAndAuthor'>Created in {oneDiary.date} by: {oneDiary.author}</span>
+        </Card.Meta>
 
-         <br/><br/>
-      </li>
+        <Card.Description>{oneDiary.text}</Card.Description>
+        </Card.Content>
+
+        <Card.Content extra>
+          <a>
+           <Button.Content onClick={props.deleteDiary.bind(null, oneDiary._id)} hidden>
+              <Icon name='delete' />
+                Delete Post
+           </Button.Content>
+          </a>
+        </Card.Content>
+      </Card>
     )
 })
     return(
       <div>
-        <h2>My Diary/Blog</h2>
-      <ul>
-        {diaryList}
-      </ul>
+        <Card.Group className="centered">
+          {diaryList}
+        </Card.Group>
       </div>
     )
   }

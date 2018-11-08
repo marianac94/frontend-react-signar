@@ -2,24 +2,61 @@ body {
   background-color: #EFEDEB;
 }
 
+div .mediaIcons {
+  width: 300px;
+  float: right;
+  color: black;
+  margin-top: 10px;
+}
+
+div .logo {
+  padding: 50px 700px 0;
+  margin: 0 auto;
+}
+
 .nav a {
   float: center;
   display: inline-block;
   color: black;
-  text-align: center;
-  padding: 14px 16px;
+  padding: 0 120px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 12px;
+
+  font-family: 'Montserrat';
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .nav a:hover {
   color: #ACB9BC;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+.introText {
+  float: center;
+  letter-spacing: 2px;
 }
-body {
+
+.mainText {
+  font-size: 65px;
+  font-family: 'Vidaloka', serif;
+}
+
+.pText {
+  font-size: 16px;
   font-family: 'Montserrat';
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
