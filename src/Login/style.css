@@ -1,3 +1,17 @@
-#Login-form {
-  height: 100%;
+.allForm {
+  font-size: 28px;
+  font-family: 'Montserrat', serif;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  width: 550px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 160px;
+}
+
+Button {
+  width: 550px;
 }

@@ -1,44 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend React Signar
 
-## Available Scripts
 
-In the project directory, you can run:
+**Signar** is a full-stack application that consists on having an online space for the user to write about whatever interests they have.
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Link to Site
+...
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Link to Trello (project)
+https://trello.com/b/o62UPBSO/project-3-react-express-api
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Technologies used
+1. React JS
+2. CSS
+3. JavaScript
+4. Node.js
+5. Express
+6. MongoDB and Mongoose
+7. Surge (for deployment)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Prototype Wireframe
+![alt text](img/wireframe.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Further Challenges
+- To be able to make login and registration for the user real with authentication.
+- When clicking one article, redirect to page to see only that one and add a back to main page button inside.
+- Make the user experience more easy and friendly.
+- Add search bar by keyword in the 'see all posts' route.
+- Try and add Itunes API so people can hear music while they write.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## MVP User Stories
+* As a blogger/influencer, I would sign in and create a day by day diary where I could upload all my outfits, food, friends, trips and memories.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* As a mother, I would sign in so I could write all about my children memories and family trips.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* As a person who is studying I would sign in and start writing about my interests and I would start making posts so whenever I feel like having something worth sharing it, I would just click on the share function and added to one of my social media.

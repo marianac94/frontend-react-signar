@@ -40,6 +40,7 @@ div .logo {
 .mainText {
   font-size: 65px;
   font-family: 'Vidaloka', serif;
+  padding-top: 60px;
 }
 
 .pText {
@@ -50,22 +51,11 @@ div .logo {
   margin-top: 10px;
 }
 
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 30px;
-  font-size: 12px;
-  font-family: 'Montserrat';
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .titleList {
   font-size: 65px;
   font-family: 'Vidaloka', serif;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 40px;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -83,22 +73,35 @@ footer {
 }
 
 .titleForm {
-  font-size: 30px;
+  font-size: 28px;
   font-family: 'Montserrat', serif;
   color: black;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 100px;
+  padding-bottom: 20px;;
+  text-transform: uppercase;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
-.allForm {
+div .wrapperForm {
   width: 505px;
-}
-
-.everythingForm {
-  width: 700px;
   text-align: center;
   margin: 0 auto;
-
+  padding-bottom: 300px;
 }
+
+/* footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: -2px;
+} */

@@ -39,15 +39,13 @@ class Login extends Component {
 
   render(){
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} className='allForm'>
 
         <h1>Login</h1>
 
-        <Label>Username</Label>
-        <Form.Input type='text' name="username" onChange={this.handleChange} />
+        <Form.Input type='text' name="username" placeholder='Username' onChange={this.handleChange} />
 
-        <Label>Password</Label>
-        <Form.Input type='password' name="password"  onChange={this.handleChange} />
+        <Form.Input type='password' name="password" placeholder='Password' onChange={this.handleChange} />
 
         <Button type="Submit" color="black">Login</Button>
       </Form>

@@ -41,7 +41,8 @@ const DiaryList = (props) => {
         </style>
 
         <h1 className='titleList'>My journal</h1>
-        <h3 className='subTitleList'>List of my articles</h3>
+        <h3 className='subTitleList'>Write it.</h3>
+
         <Card.Group className="centered">
           {diaryList}
         </Card.Group>

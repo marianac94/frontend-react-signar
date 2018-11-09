@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import { Header, Divider, Image, Container } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
+import { Link } from 'react-router-dom';
 import CreateDiary from '../CreateDiary';
+import DiaryList from '../DiaryList';
 
-
-class DiaryContainer extends Component {
-  constructor() {
+class ShowList extends Component {
+  constructor(){
     super();
     this.state = {
       diary: []
@@ -44,30 +44,23 @@ class DiaryContainer extends Component {
       }
     }
 
-  deleteDiary = async (id) => {
-    const deleteDiaryResponse = await fetch('http://localhost:9000/api/v1/diary/' + id, {method: 'DELETE'});
-    const deleteDiaryParsed = await deleteDiaryResponse.json();
-      this.setState({
-        diary: this.state.diary.filter((oneDiary) => oneDiary._id !== id )
-      })
+    deleteDiary = async (id) => {
+      const deleteDiaryResponse = await fetch('http://localhost:9000/api/v1/diary/' + id, {method: 'DELETE'});
+      const deleteDiaryParsed = await deleteDiaryResponse.json();
+        this.setState({
+          diary: this.state.diary.filter((oneDiary) => oneDiary._id !== id )
+        })
 
-    console.log(deleteDiaryParsed, ' deleted post')
-  }
+      console.log(deleteDiaryParsed, ' deleted post')
+    }
 
-  render(){
-    return(
-      <div>
-        <Container className='introText' textAlign='center' style={{ padding: '6em 0em' }} vertical>
-          <h1 className='mainText'>My life in words.</h1>
-          <h3 className='pText'>a new digital space to write about your day by day</h3>
-        </Container>
-
-        <CreateDiary addDiary={this.addDiary} />
-
-      </div>
+  render() {
+  return (
+    <div>
+      <DiaryList oneDiary={this.state.diary} deleteDiary={this.deleteDiary} />
+    </div>
     )
   }
 }
 
-
-export default DiaryContainer;
+export default ShowList;

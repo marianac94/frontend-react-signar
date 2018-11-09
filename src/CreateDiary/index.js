@@ -21,13 +21,10 @@ handleChange = (e) => {
 
 render(){
   return(
-    <Segment className='everythingForm'>
-      <h1 className='titleForm'>Tell your story</h1>
+    <div className='wrapperForm'>
+      <h1 className='titleForm'>Share your thoughts</h1>
 
-      <Form onSubmit={this.props.addDiary.bind(null, this.state)} className='allForm'>
-
-        <div className='formField'>
-
+        <Form onSubmit={this.props.addDiary.bind(null, this.state)}>
           <Form.Field
             control={Input}
             type='text'
@@ -56,7 +53,7 @@ render(){
             name='date'
             value={this.state.date}
             onChange={this.handleChange}
-            placeholder='Todays date:'
+            placeholder='Date'
             style={{ width: "240px" }}
             />
         </Form.Group>
@@ -67,7 +64,7 @@ render(){
             name='image'
             value={this.state.image}
             onChange={this.handleChange}
-            placeholder='Image:'
+            placeholder='Image'
             style={{ width: "500px" }}
             />
 
@@ -88,9 +85,8 @@ render(){
             color='black'
             style={{ width: "500px" }}
             >Post</Form.Field>
-          </div>
-      </Form>
-    </Segment>
+        </Form>
+      </div>
     )
   }
 }
