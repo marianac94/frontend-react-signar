@@ -23,7 +23,7 @@ https://trello.com/b/o62UPBSO/project-3-react-express-api
 
 
 ## Prototype Wireframe
-![alt text](../img/wireframe.png)
+![alt text](img/wireframe.png)
 
 
 ## Further Challenges
